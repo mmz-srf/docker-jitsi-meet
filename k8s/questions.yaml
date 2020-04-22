@@ -13,7 +13,7 @@ questions:
   default: 'focus'
   required: true
 - variable: jicofo.authPassword
-  label: "jicofo Auth User"
+  label: "jicofo Auth Password"
   type: password
   required: true
 - variable: jvb.componentSecret
@@ -26,6 +26,6 @@ questions:
   default: 'jvb'
   required: true
 - variable: jvb.authPassword
-  label: "jvb Auth User"
+  label: "jvb Auth Password"
   type: password
   required: true
