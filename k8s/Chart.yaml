@@ -3,6 +3,7 @@ name: jitsi-meet
 version: 1.0.0
 appVersion: 0.0.1
 description: jitsi deployment
+icon: https://335wvf48o1332cksy23mw1pj-wpengine.netdna-ssl.com/wp-content/themes/jitsi/images/logo-web-2020.png
 sources:
   - https://github.com/jitsi/docker-jitsi-meet
 maintainers: 
