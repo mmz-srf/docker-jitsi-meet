@@ -5,6 +5,11 @@ replicaCount: 1
 nameOverride: ""
 fullnameOverride: ""
 
+jicofo: 
+  componentSecret: "s3cr37"
+  authUser: "focus"
+  authPassword: "passw0rd"
+
 service:
   type: ClusterIP
   port: 80

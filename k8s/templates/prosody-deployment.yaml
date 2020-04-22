@@ -23,13 +23,13 @@ spec:
         - name: XMPP_MUC_DOMAIN
           value: muc.meet.jitsi
         - name: JICOFO_COMPONENT_SECRET
-          value: s3cr37
+          value: {{ .Values.jicofo.componentSecret }}
+        - name: JICOFO_AUTH_USER
+          value: {{ .Values.jicofo.authUser }}
+        - name: JICOFO_AUTH_PASSWORD
+          value: {{ .Values.jicofo.authPassword }}
         - name: JVB_COMPONENT_SECRET
           value: s3cr3t
-        - name: JICOFO_AUTH_USER
-          value: focus
-        - name: JICOFO_AUTH_PASSWORD
-          value: passw0rd
         - name: JVB_AUTH_USER
           value: jvb
         - name: JVB_AUTH_PASSWORD
