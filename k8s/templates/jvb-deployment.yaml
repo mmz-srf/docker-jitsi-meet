@@ -31,9 +31,9 @@ spec:
         - name: JVB_TCP_PORT
           value: "30001"
         - name: JVB_AUTH_USER
-          value: jvb
+          value: {{ .Values.jvb.authUser }}
         - name: JVB_AUTH_PASSWORD
-          value: passw0rd
+          value: {{ .Values.jvb.authPassword }}
         - name: JVB_BREWERY_MUC
           value: jvbbrewery
         - name: XMPP_INTERNAL_MUC_DOMAIN
@@ -41,7 +41,7 @@ spec:
         - name: JVB_STUN_SERVERS
           value: stun.l.google.com:19302,stun1.l.google.com:19302,stun2.l.google.com:19302
         - name: JICOFO_AUTH_USER
-          value: focus
+          value: {{ .Values.jicofo.authUser }}
         - name: TZ
           value: Europe/Paris
         image: 103425057857.dkr.ecr.us-west-2.amazonaws.com/jitsi/jvb

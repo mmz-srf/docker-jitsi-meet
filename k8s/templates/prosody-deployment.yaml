@@ -29,11 +29,11 @@ spec:
         - name: JICOFO_AUTH_PASSWORD
           value: {{ .Values.jicofo.authPassword }}
         - name: JVB_COMPONENT_SECRET
-          value: s3cr3t
+          value: {{ .Values.jvb.componentSecret }}
         - name: JVB_AUTH_USER
-          value: jvb
+          value: {{ .Values.jvb.authUser }}
         - name: JVB_AUTH_PASSWORD
-          value: passw0rd
+          value: {{ .Values.jvb.authPassword }}
         - name: XMPP_INTERNAL_MUC_DOMAIN
           value: internal-muc.meet.jitsi
         - name: TZ

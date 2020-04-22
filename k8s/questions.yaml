@@ -16,3 +16,16 @@ questions:
   label: "jicofo Auth User"
   type: password
   required: true
+- variable: jvb.componentSecret
+  label: "jvb Component Secret"
+  type: password
+  required: true
+- variable: jvb.authUser
+  label: "jvb Auth User"
+  type: string
+  default: 'jvb'
+  required: true
+- variable: jvb.authPassword
+  label: "jvb Auth User"
+  type: password
+  required: true
