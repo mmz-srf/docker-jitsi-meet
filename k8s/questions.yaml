@@ -1,0 +1,17 @@
+- variable: ingress.hosts[0]
+  label: "Hostname"
+  type: string
+  required: true
+- variable: jicofo.componentSecret
+  label: "jicofo Component Secret"
+  type: password
+  required: true
+- variable: jicofo.authUser
+  label: "jicofo Auth User"
+  type: string
+  default: 'focus'
+  required: true
+- variable: jicofo.authPassword
+  label: "jicofo Auth User"
+  type: password
+  required: true
