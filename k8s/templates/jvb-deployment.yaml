@@ -45,9 +45,9 @@ spec:
         image: jitsi/jvb
         name: jvb
         ports:
-        - containerPort: 30000
+        - containerPort: {{ .Values.jvb.containerPortUDP }}
           protocol: UDP
-        - containerPort: 30001
+        - containerPort: {{ .Values.jvb.containerPortTCP }}
         resources: {}
       restartPolicy: Always
 status: {}

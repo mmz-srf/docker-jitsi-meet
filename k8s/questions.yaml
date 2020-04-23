@@ -33,6 +33,16 @@ questions:
   label: "jvb Component Secret"
   type: password
   required: true
+- variable: jvb.containerPortUDP
+  label: "jvb Container Port UDP"
+  type: int
+  default: 30000
+  required: true
+- variable: jvb.containerPortTCP
+  label: "jvb Container Port TCP"
+  type: int
+  default: 30001
+  required: true
 - variable: jvb.authUser
   label: "jvb Auth User"
   type: string

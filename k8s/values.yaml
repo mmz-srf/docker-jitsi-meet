@@ -17,6 +17,8 @@ jvb:
   componentSecret: "s3cr3t"
   authUser: "jvb"
   authPassword: "passw0rd"
+  containerPortUDP: 30000
+  containerPortTCP: 30001
 
 service:
   type: ClusterIP
