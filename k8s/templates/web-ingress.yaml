@@ -15,9 +15,9 @@ spec:
 {{- end }}
   rules:
     - host: {{ .Values.ingress.host }}
-      https:
+      http:
         paths:
           - path: {{ .Values.ingress.path }}
             backend:
               serviceName: web
-              servicePort: https
+              servicePort: http

@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - env:
-        - name: ENABLE_HTTP_REDIRECT
-          value: "1"
+#        - name: ENABLE_HTTP_REDIRECT
+#          value: "1"
         - name: ENABLE_LETSENCRYPT
           value: "1"
         - name: LETSENCRYPT_DOMAIN
