@@ -29,26 +29,31 @@ questions:
   label: "jicofo Auth Password"
   type: password
   required: true
-- variable: jvb.componentSecret
-  label: "jvb Component Secret"
-  type: password
-  required: true
 - variable: jvb.containerPortUDP
   label: "jvb Container Port UDP"
   type: int
   default: 30000
+  group: "JVB Jitsi Video Bridge"
   required: true
 - variable: jvb.containerPortTCP
   label: "jvb Container Port TCP"
   type: int
   default: 30001
+  group: "JVB Jitsi Video Bridge"
+  required: true
+- variable: jvb.componentSecret
+  label: "jvb Component Secret"
+  type: password
+  group: "JVB Jitsi Video Bridge"
   required: true
 - variable: jvb.authUser
   label: "jvb Auth User"
   type: string
   default: 'jvb'
+  group: "JVB Jitsi Video Bridge"
   required: true
 - variable: jvb.authPassword
   label: "jvb Auth Password"
   type: password
+  group: "JVB Jitsi Video Bridge"
   required: true
