@@ -1,4 +1,8 @@
 questions:
+- variable: dockerHostAddress
+  label: "Public IP"
+  type: string
+  required: true
 - variable: ingress.hosts[0]
   label: "Hostname"
   type: string

@@ -5,6 +5,8 @@ replicaCount: 1
 nameOverride: ""
 fullnameOverride: ""
 
+dockerHostAddress: ""
+
 jicofo: 
   componentSecret: "s3cr37"
   authUser: "focus"
