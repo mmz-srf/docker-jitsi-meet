@@ -21,7 +21,7 @@ spec:
         - name: ENABLE_LETSENCRYPT
           value: "1"
         - name: LETSENCRYPT_DOMAIN
-          value: {{ .Values.ingress.hosts[0] }}
+          value: {{ .Values.ingress.host }}
         - name: LETSENCRYPT_EMAIL
           value: {{ .Values.letsencryptEmail }}
         - name: JICOFO_AUTH_USER
