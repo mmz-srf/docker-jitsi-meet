@@ -7,6 +7,10 @@ questions:
   label: "Hostname"
   type: string
   required: true
+- variable: letsencryptEmail
+  label: "Letecrypt Email"
+  type: string
+  required: true
 - variable: jicofo.componentSecret
   label: "jicofo Component Secret"
   type: password

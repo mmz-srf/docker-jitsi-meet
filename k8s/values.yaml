@@ -6,6 +6,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 dockerHostAddress: ""
+letsencryptEmail: ""
 
 jicofo: 
   componentSecret: "s3cr37"

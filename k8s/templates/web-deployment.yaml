@@ -16,6 +16,14 @@ spec:
     spec:
       containers:
       - env:
+        - name: ENABLE_HTTP_REDIRECT
+          value: "1"
+        - name: ENABLE_LETSENCRYPT
+          value: "1"
+        - name: LETSENCRYPT_DOMAIN
+          value: {{ .Values.ingress.hosts[0] }}
+        - name: LETSENCRYPT_EMAIL
+          value: {{ .Values.letsencryptEmail }}
         - name: JICOFO_AUTH_USER
           value: {{ .Values.jicofo.authUser }}
         - name: XMPP_DOMAIN
