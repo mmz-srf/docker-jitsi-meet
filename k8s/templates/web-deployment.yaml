@@ -18,7 +18,7 @@ spec:
       - env:
 #        - name: ENABLE_HTTP_REDIRECT
 #          value: "1"
-        {{- if (.Values.letecrypt.enabled) }}
+        {{- if (.Values.letsecrypt.enabled) }}
         - name: ENABLE_LETSENCRYPT
           value: "1"
         - name: LETSENCRYPT_DOMAIN
