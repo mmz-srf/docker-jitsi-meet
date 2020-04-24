@@ -18,12 +18,14 @@ spec:
       - env:
 #        - name: ENABLE_HTTP_REDIRECT
 #          value: "1"
+        {{- if (.Values.letecrypt.enabled) }}
         - name: ENABLE_LETSENCRYPT
           value: "1"
         - name: LETSENCRYPT_DOMAIN
           value: {{ .Values.ingress.host }}
         - name: LETSENCRYPT_EMAIL
-          value: {{ .Values.letsencryptEmail }}
+          value: {{ .Values.letsencrypt.email }}
+        {{- end }}
         - name: JICOFO_AUTH_USER
           value: {{ .Values.jicofo.authUser }}
         - name: XMPP_DOMAIN

@@ -12,10 +12,18 @@ questions:
   type: string
   default: "/"
   required: true
-- variable: letsencryptEmail
-  label: "Letecrypt Email"
-  type: string
+- variable: letsencrypt.enabled
+  default: false
+  description: "If true, Letencrypt is enabled"
+  type: boolean
   required: true
+  show_subquestion_if: true
+  group: "Letsencrypt"
+  subquestions:
+  - variable: letsencrypt.email
+    label: "Letecrypt Email"
+    type: string
+    required: true
 - variable: jicofo.componentSecret
   label: "jicofo Component Secret"
   type: password
