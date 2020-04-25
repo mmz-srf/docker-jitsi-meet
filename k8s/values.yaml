@@ -9,6 +9,7 @@ dockerHostAddress: ""
 
 letsencrypt.enabled: false
 letsencrypt.email: ""
+timezone: Europe/Zurich
 
 jicofo: 
   componentSecret: "s3cr37"

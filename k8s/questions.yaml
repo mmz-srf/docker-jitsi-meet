@@ -3,6 +3,11 @@ questions:
   label: "Public IP"
   type: string
   required: true
+- variable: timezone
+  label: "Time Zone"
+  type: string
+  default: "Europe/Zurich"
+  required: true
 - variable: ingress.host
   label: "Hostname"
   type: string
