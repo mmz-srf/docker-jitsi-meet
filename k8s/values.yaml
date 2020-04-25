@@ -7,8 +7,10 @@ fullnameOverride: ""
 
 dockerHostAddress: ""
 
-letsencrypt.enabled: false
-letsencrypt.email: ""
+letsencrypt:
+  enabled: false
+  email: ""
+
 timezone: Europe/Zurich
 
 jicofo: 
