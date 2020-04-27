@@ -27,7 +27,7 @@ spec:
           value: {{ .Values.letsencrypt.email }}
         {{- end }}
         - name: JICOFO_AUTH_USER
-          value: {{ .Values.jicofo.authUser }}
+          value: {{ .Values.jicofo.authUser | quote }}
         - name: XMPP_DOMAIN
           value: meet.jitsi
         - name: XMPP_AUTH_DOMAIN

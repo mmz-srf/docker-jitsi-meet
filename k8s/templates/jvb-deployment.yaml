@@ -31,7 +31,7 @@ spec:
         - name: JVB_AUTH_USER
           value: {{ .Values.jvb.authUser }}
         - name: JVB_AUTH_PASSWORD
-          value: {{ .Values.jvb.authPassword }}
+          value: {{ .Values.jvb.authPassword | quote }}
         - name: JVB_BREWERY_MUC
           value: jvbbrewery
         - name: XMPP_INTERNAL_MUC_DOMAIN
@@ -39,7 +39,7 @@ spec:
         - name: JVB_STUN_SERVERS
           value: ""
         - name: JICOFO_AUTH_USER
-          value: {{ .Values.jicofo.authUser }}
+          value: {{ .Values.jicofo.authUser | quote }}
         - name: TZ
           value: {{ .Values.timezone }}
         image: jitsi/jvb

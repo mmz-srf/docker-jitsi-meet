@@ -23,11 +23,11 @@ spec:
         - name: XMPP_AUTH_DOMAIN
           value: auth.meet.jitsi
         - name: JICOFO_COMPONENT_SECRET
-          value: {{ .Values.jicofo.componentSecret }}
+          value: {{ .Values.jicofo.componentSecret | quote }}
         - name: JICOFO_AUTH_USER
           value: {{ .Values.jicofo.authUser }}
         - name: JICOFO_AUTH_PASSWORD
-          value: {{ .Values.jicofo.authPassword }}
+          value: {{ .Values.jicofo.authPassword | quote }}
         - name: JVB_BREWERY_MUC
           value: jvbbrewery
         - name: XMPP_INTERNAL_MUC_DOMAIN
