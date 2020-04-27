@@ -32,15 +32,18 @@ questions:
 - variable: jicofo.componentSecret
   label: "jicofo Component Secret"
   type: password
+  group: "jicofo"
   required: true
 - variable: jicofo.authUser
   label: "jicofo Auth User"
   type: string
   default: 'focus'
+  group: "jicofo"
   required: true
 - variable: jicofo.authPassword
   label: "jicofo Auth Password"
   type: password
+  group: "jicofo"
   required: true
 - variable: jvb.containerPortUDP
   label: "jvb Container Port UDP"
