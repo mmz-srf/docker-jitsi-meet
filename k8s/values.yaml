@@ -13,6 +13,10 @@ letsencrypt:
 
 timezone: Europe/Zurich
 
+auth: 
+  enabled: true
+  enableGuests: true
+  authtype: "internal"
 jicofo: 
   componentSecret: "s3cr37"
   authUser: "focus"

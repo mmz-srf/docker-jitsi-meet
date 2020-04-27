@@ -16,6 +16,14 @@ spec:
     spec:
       containers:
       - env:
+        {{- if (.Values.auth.enabled) }}
+        - name: AUTH_TYPE
+          value: {{ .Values.auth.authtype }}
+        - name: ENABLE_AUTH
+          value: "1"
+        - name: ENABLE_GUESTS
+          value: {{ .Values.auth.enableGuests | quote }}
+        {{- end }}
         - name: XMPP_DOMAIN
           value: meet.jitsi
         - name: XMPP_AUTH_DOMAIN
