@@ -40,7 +40,7 @@ spec:
           value: {{ .Values.auth.ldap.authMethod }}
         - name: LDAP_VERSION
           value: {{ .Values.auth.ldap.version | quote }}
-        {{- if (.Values.auth.useTLS) }}
+        {{- if (.Values.auth.ldap.useTLS) }}
         - name: LDAP_USE_TLS
           value: "1"
         - name: LDAP_TLS_CIPHERS
@@ -53,7 +53,7 @@ spec:
         - name: LDAP_TLS_CACERT_DIR
           value: {{ .Values.auth.ldap.TLSCaCertDir }}
         {{- end }}
-        {{- if (.Values.auth.startTLS) }}
+        {{- if (.Values.auth.ldap.startTLS) }}
         - name: LDAP_START_TLS
           value: "1"
         {{- end }}
