@@ -17,6 +17,20 @@ auth:
   enabled: true
   enableGuests: true
   authtype: "internal"
+  ldap:
+    url: "ldaps://ldap.domain.com/"
+    base: "DC=example,DC=domain,DC=com"
+    binddn: "CN=binduser,OU=users,DC=example,DC=domain,DC=com"
+    bindpw: "LdapUserPassw0rd"
+    filter: "(sAMAccountName=%u)"
+    authMethod: "bind"
+    version: 3
+    useTLS: true
+    TLSCiphers: "SECURE256:SECURE128"
+    TLScheckPeer: true
+    TLSCaCertFile: "/etc/ssl/certs/ca-certificates.crt"
+    TLSCaCertDir: "/etc/ssl/certs"
+    startTLS: false
 jicofo: 
   componentSecret: "s3cr37"
   authUser: "focus"

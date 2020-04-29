@@ -25,6 +25,40 @@ spec:
         - name: ENABLE_GUESTS
           value: 1
         {{- end }}
+        {{- if (.Values.auth.authtype == "ldap") }}
+        - name: LDAP_URL
+          value: {{ .Values.auth.ldap.url }}
+        - name: LDAP_BASE
+          value: {{ .Values.auth.ldap.base }}
+        - name: LDAP_BINDDN
+          value: {{ .Values.auth.ldap.binddn }}
+        - name: LDAP_BINDPW
+          value: {{ .Values.auth.ldap.bindpw }}
+        - name: LDAP_FILTER
+          value: {{ .Values.auth.ldap.filter }}
+        - name: LDAP_AUTH_METHOD
+          value: {{ .Values.auth.ldap.authMethod }}
+        - name: LDAP_VERSION
+          value: {{ .Values.auth.ldap.version | quote }}
+        {{- if (.Values.auth.useTLS) }}
+        - name: LDAP_USE_TLS
+          value: "1"
+        - name: LDAP_TLS_CIPHERS
+          value: {{ .Values.auth.ldap.TLSCiphers }}
+        {{- if (.Values.auth.TLScheckPeer) }}
+        - name: LDAP_TLS_CHECK_PEER
+          value: 1
+        - name: LDAP_TLS_CACERT_FILE
+          value: {{ .Values.auth.ldap.TLSCaCertFile }}
+        - name: LDAP_TLS_CACERT_DIR
+          value: {{ .Values.auth.ldap.TLSCaCertDir }}
+        {{- end }}
+        {{- if (.Values.auth.startTLS) }}
+        - name: LDAP_START_TLS
+          value: "1"
+        {{- end }}
+        {{- end }}
+        {{- end }}
         {{- end }}
         - name: XMPP_DOMAIN
           value: meet.jitsi
