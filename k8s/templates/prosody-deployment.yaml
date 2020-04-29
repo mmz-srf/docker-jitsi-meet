@@ -21,8 +21,10 @@ spec:
           value: {{ .Values.auth.authtype }}
         - name: ENABLE_AUTH
           value: "1"
+        {{- if (.Values.auth.enableGuests) }}
         - name: ENABLE_GUESTS
-          value: {{ .Values.auth.enableGuests | quote }}
+          value: 1
+        {{- end }}
         {{- end }}
         - name: XMPP_DOMAIN
           value: meet.jitsi
