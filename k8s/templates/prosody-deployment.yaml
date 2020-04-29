@@ -23,7 +23,7 @@ spec:
           value: "1"
         {{- if (.Values.auth.enableGuests) }}
         - name: ENABLE_GUESTS
-          value: 1
+          value: "1"
         {{- end }}
         {{- if (eq .Values.auth.authtype "ldap") }}
         - name: LDAP_URL
