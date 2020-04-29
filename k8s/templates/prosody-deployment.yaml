@@ -25,7 +25,7 @@ spec:
         - name: ENABLE_GUESTS
           value: 1
         {{- end }}
-        {{- if (.Values.auth.authtype == "ldap") }}
+        {{- if (eq .Values.auth.authtype "ldap") }}
         - name: LDAP_URL
           value: {{ .Values.auth.ldap.url }}
         - name: LDAP_BASE
