@@ -20,7 +20,7 @@ questions:
 
 - variable: auth.enabled
   default: false
-  description: "Enable authentication"
+  label: "Enable authentication"
   type: boolean
   required: true
   show_subquestion_if: true
@@ -29,7 +29,7 @@ questions:
   - variable: auth.enableGuests
     label: "Enable guest access"
     type: boolean
-  - variable: auth.type
+  - variable: auth.authtype
     label: "Select authentication type"
     type: enum
     default: 'internal'
@@ -41,24 +41,30 @@ questions:
   - variable: auth.ldap.url
     label: "LDAP URL for ldap connection"
     type: string
+    description: "ldaps://ldap.domain.com/"
   - variable: auth.ldap.base
     label: "LDAP base DN. Can be empty."
     type: string
+    description: "DC=example,DC=domain,DC=com"
   - variable: auth.ldap.binddn
     label: "LDAP user DN. Do not specify this parameter for the anonymous bind."
     type: string
+    description: "CN=binduser,OU=users,DC=example,DC=domain,DC=com"
   - variable: auth.ldap.bindpw
     label: "LDAP user password. Do not specify this parameter for the anonymous bind."
     type: password
   - variable: auth.ldap.filter
     label: "LDAP filter."
     type: string
+    description: "(sAMAccountName=%u)"
   - variable: auth.ldap.authMethod
     label: "LDAP authentication method."
     type: string
+    description: "bind"
   - variable: auth.ldap.version
     label: "LDAP protocol version"
     type: int
+    default: 3
   - variable: auth.ldap.useTLS
     label: "LDAP Enable LDAP TLS"
     type: boolean
@@ -66,6 +72,7 @@ questions:
   - variable: auth.ldap.TLSCiphers
     label: "LDAP Set TLS ciphers list to allow"
     type: string
+    description: "SECURE256:SECURE128"
   - variable: auth.ldap.TLScheckPeer
     label: "LDAP Require and verify LDAP server certificate"
     type: boolean
@@ -73,9 +80,11 @@ questions:
   - variable: auth.ldap.TLSCaCertFile
     label: "LDAP Path to CA cert file. Used when server certificate verification is enabled"
     type: string
+    description: "/etc/ssl/certs/ca-certificates.crt"
   - variable: auth.ldap.TLSCaCertDir
     label: "LDAP Path to CA certs directory. Used when server certificate verification is enabled."
     type: string
+    description: "/etc/ssl/certs"
   - variable: auth.ldap.TLScheckPeer
     label: "LDAP Enable START_TLS, requires LDAPv3, URL must be ldap:// not ldaps://"
     type: boolean
