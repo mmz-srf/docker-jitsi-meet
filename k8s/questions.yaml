@@ -89,6 +89,38 @@ questions:
     label: "LDAP Enable START_TLS, requires LDAPv3, URL must be ldap:// not ldaps://"
     type: boolean
     default: false
+  - variable: auth.jwt.appID
+    label: "JWT Application identifier"
+    type: string
+    description: "my_jitsi_app_id"
+  - variable: auth.jwt.appSecret
+    label: "JWT Application secret known only to your token"
+    type: string
+    description: "my_jitsi_app_secret"
+  - variable: auth.jwt.acceptedIssuers
+    label: "JWT (Optional) Set asap_accepted_issuers as a comma separated list"
+    type: string
+    description: "my_web_client,my_app_client"
+  - variable: auth.jwt.acceptedAudiences
+    label: "JWT (Optional) Set asap_accepted_audiences as a comma separated list"
+    type: string
+    description: "my_server1,my_server2"
+  - variable: auth.jwt.asapKeyserver
+    label: "JWT (Optional) Set asap_keyserver to a url where public keys can be found"
+    type: string
+    description: "https://example.com/asap"
+  - variable: auth.ldap.allowEmpty
+    label: "JWT (Optional) Allow anonymous users with no JWT while validating JWTs when provided"
+    type: boolean
+    default: false
+  - variable: auth.jwt.authType
+    label: "JWT (Optional) Controls which module is used for processing incoming JWTs"
+    type: string
+    description: "token"
+  - variable: auth.jwt.tokenAuthModule
+    label: "JWT (Optional) Controls which module is used for validating JWTs"
+    type: string
+    description: "token_verification"
   
 - variable: letsencrypt.enabled
   default: false

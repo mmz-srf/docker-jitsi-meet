@@ -31,6 +31,16 @@ auth:
     TLSCaCertFile: "/etc/ssl/certs/ca-certificates.crt"
     TLSCaCertDir: "/etc/ssl/certs"
     startTLS: false
+  jwt:
+    appID: "my_jitsi_app_id"
+    appSecret: "my_jitsi_app_secret"
+    acceptedIssuers: "my_web_client,my_app_client"
+    acceptedAudiences: "my_server1,my_server2"
+    asapKeyserver: "https://example.com/asap"
+    allowEmpty: 0
+    authType: "token"
+    tokenAuthModule: "token_verification"
+
 jicofo: 
   componentSecret: "s3cr37"
   authUser: "focus"
