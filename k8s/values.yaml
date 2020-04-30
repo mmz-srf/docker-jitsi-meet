@@ -13,6 +13,34 @@ letsencrypt:
 
 timezone: Europe/Zurich
 
+# SIP Gateway configuration
+jigasi:
+  enabled: false
+  sipUri: "test@sip2sip.info"
+  sipPassword: "passw0rd"
+  sipServer: "sip2sip.info"
+  sipPort: 5060
+  sipTransport: "UDP"
+  xmppUser: "jigasi"
+  xmppPasword: "passwOrd"
+  portMin: 20000
+  portMax: 20050
+  healthCheckSIPURI: "keepalive"
+  healthCheckInterval: 300000
+  SIPKeepAliveMethod: "OPTIONS"
+  enableSdesSrtp: true
+  transcription:
+    enabled: false
+    advertiseURL: true
+    recordAudio: true
+    sendTXT: false
+    gc:
+      projectID:
+      privateKeyID:
+      privateKey:
+      clientEmail:
+      clientID:
+      clientCertURL:
 auth: 
   enabled: true
   enableGuests: true

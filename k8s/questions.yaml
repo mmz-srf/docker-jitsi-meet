@@ -24,7 +24,7 @@ questions:
   type: boolean
   required: true
   show_subquestion_if: true
-  group: "auth"
+  group: "Authentication"
   subquestions:
   - variable: auth.enableGuests
     label: "Enable guest access"
@@ -121,7 +121,123 @@ questions:
     label: "JWT (Optional) Controls which module is used for validating JWTs"
     type: string
     description: "token_verification"
-  
+
+- variable: jigasi.enabled
+  default: false
+  label: "Enable JIGASI "
+  type: boolean
+  required: true
+  show_subquestion_if: true
+  group: "JIGASI the SIP (audio only) gateway"
+  subquestions:
+  - variable: jigasi.sipUri
+    label: "SIP URI for incoming / outgoing calls"
+    type: string
+    required: true
+    description: "test@sip2sip.info"
+  - variable: jigasi.sipPassword
+    label: "Password for the specified SIP account"
+    type: password
+    required: true
+  - variable: jigasi.sipServer
+    label: "SIP server (use the SIP account domain if in doubt)"
+    type: string
+    required: true
+    description: "sip2sip.info"
+  - variable: jigasi.sipPort
+    label: "SIP server port	"
+    type: int
+    required: true
+    default: 5060
+    description: "5060"
+  - variable: jigasi.sipTransport
+    label: "SIP transport"
+    type: enum
+    required: true
+    default: "UDP"
+    options: 
+      - "UDP"
+      - "TCP"
+  - variable: jigasi.xmppUser
+    label: "XMPP user for Jigasi MUC client connections"
+    type: string
+    required: true
+    default: "jigasi"
+    description: "jigasi"
+  - variable: jigasi.xmppPasword
+    label: "XMPP password for Jigasi MUC client connections"
+    type: password
+    required: true
+  - variable: jigasi.portMin
+    label: "Minimum port for media used by Jigasi"
+    type: int
+    required: true
+    default: 20000
+  - variable: jigasi.portMax
+    label: "Maximum port for media used by Jigasi"
+    type: int
+    required: true
+    default: 20050
+  - variable: jigasi.healthCheckSIPURI
+    label: "Health-check SIP URI extension. Jigasi will call it for health check"
+    type: string
+    required: true
+    default: "keepalive"
+    description: "keepalive"
+  - variable: jigasi.healthCheckInterval
+    label: "Interval of health check in milliseconds"
+    type: int
+    required: true
+    default: 300000
+  - variable: jigasi.SIPKeepAliveMethod
+    label: "Keepalive method"
+    type: string
+    required: true
+    default: "OPTIONS"
+  - variable: jigasi.enableSdesSrtp
+    label: "Enable SDES srtp"
+    type: boolean
+    required: true
+    default: true
+  - variable: jigasi.transcription.enabled
+    label: "Enable Jigasi transcription in a conference"
+    type: boolean
+    required: true
+    default: false
+  - variable: jigasi.transcription.advertiseURL
+    label: "TRANSCRIPTION Jigasi will post an URL to the chat with transcription file"
+    type: boolean
+    required: true
+    default: true
+  - variable: jigasi.transcription.recordAudio
+    label: "TRANSCRIPTION Jigasi will record audio when transcriber is on"
+    type: boolean
+    required: true
+    default: true
+  - variable: jigasi.transcription.sendTXT
+    label: "TRANSCRIPTION Jigasi will send a transcribed text to the chat when transcriber is on"
+    type: boolean
+    required: true
+    default: true
+  - variable: jigasi.transcription.gc.projectID
+    label: "project_id from Google Cloud Credentials"
+    type: string
+  - variable: jigasi.transcription.gc.privateKeyID
+    label: "private_key_id from Google Cloud Credentials"
+    type: string
+  - variable: jigasi.transcription.gc.privateKey
+    label: "private_key from Google Cloud Credentials"
+    type: multiline
+  - variable: jigasi.transcription.gc.clientEmail
+    label: "client_email from Google Cloud Credentials"
+    type: string
+  - variable: jigasi.transcription.gc.clientID
+    label: "client_id from Google Cloud Credentials"
+    type: string
+  - variable: jigasi.transcription.gc.clientCertURL
+    label: "client_x509_cert_url from Google Cloud Credentials"
+    type: string
+
 - variable: letsencrypt.enabled
   default: false
   description: "If true, Letencrypt is enabled"

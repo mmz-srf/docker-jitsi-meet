@@ -32,6 +32,10 @@ spec:
           value: jvbbrewery
         - name: XMPP_INTERNAL_MUC_DOMAIN
           value: internal-muc.meet.jitsi
+        - name: JIGASI_BREWERY_MUC
+          value: {{ .Values.jigasi.breweryMuc }}
+        - name: JIGASI_SIP_URI
+          value: {{ .Values.jigasi.sipUri }}
         - name: TZ
           value: {{ .Values.timezone }}
         image: jitsi/jicofo

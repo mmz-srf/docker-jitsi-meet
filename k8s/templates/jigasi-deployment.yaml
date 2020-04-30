@@ -1,0 +1,93 @@
+{{- if (.Values.jigasi.enabled) }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jigasi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: jigasi
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        service: jigasi
+    spec:
+      containers:
+      - env:
+        {{- if (.Values.auth.enabled) }}
+        - name: ENABLE_AUTH
+          value: "1"
+        {{- end }}
+        - name: XMPP_AUTH_DOMAIN
+          value: auth.meet.jitsi
+        - name: XMPP_INTERNAL_MUC_DOMAIN
+          value: internal-muc.meet.jitsi
+        - name: XMPP_SERVER
+          value: prosody
+        - name: XMPP_DOMAIN
+          value: meet.jitsi
+        - name: PUBLIC_URL
+          value: {{ .Values.ingress.host }}
+        - name: JIGASI_SIP_URI
+          value: {{ .Values.jigasi.sipUri }}
+        - name: JIGASI_SIP_PASSWORD
+          value: {{ .Values.jigasi.sipPassword }}
+        - name: JIGASI_SIP_SERVER
+          value: {{ .Values.jigasi.sipServer }}
+        - name: JIGASI_SIP_PORT
+          value: {{ .Values.jigasi.sipPort }}
+        - name: JIGASI_SIP_TRANSPORT
+          value: {{ .Values.jigasi.sipTransport }}
+        - name: JIGASI_XMPP_USER
+          value: {{ .Values.jigasi.xmppUser }}
+        - name: JIGASI_XMPP_PASSWORD
+          value: {{ .Values.jigasi.xmppPasword }}
+        - name: JIGASI_BREWERY_MUC
+          value: jigasibrewery
+        - name: JIGASI_PORT_MIN
+          value: {{ .Values.jicofo.portMin | quote }}
+        - name: JIGASI_PORT_MAX
+          value: {{ .Values.jicofo.portMax | quote }}
+        - name: JIGASI_HEALTH_CHECK_SIP_URI
+          value: {{ .Values.jigasi.healthCheckSIPURI }}
+        - name: JIGASI_HEALTH_CHECK_INTERVAL
+          value: {{ .Values.jigasi.healthCheckInterval | quote }}
+        - name: JIGASI_SIP_KEEP_ALIVE_METHOD
+          value: {{ .Values.jigasi.SIPKeepAliveMethod }}
+        {{- if (.Values.jigasi.enableSdesSrtp) }}
+        - name: JIGASI_ENABLE_SDES_SRTP
+          value: "1"
+        {{- end }}
+        {{- if (.Values.transcription.enabled) }}
+        - name: ENABLE_TRANSCRIPTIONS
+          value: "1"
+        - name: JIGASI_TRANSCRIBER_ADVERTISE_URL
+          value: {{ .Values.transcription.advertiseURL }}
+        - name: JIGASI_TRANSCRIBER_RECORD_AUDIO
+          value: {{ .Values.transcription.recordAudio }}
+        - name: JIGASI_TRANSCRIBER_SEND_TXT
+          value: {{ .Values.transcription.sendTXT }}
+        - name: GC_PROJECT_ID
+          value: {{ .Values.transcription.gc.sendTXT }}
+        - name: GC_PRIVATE_KEY_ID
+          value: {{ .Values.transcription.gc.sendTXT }}
+        - name: GC_PRIVATE_KEY
+          value: {{ .Values.transcription.gc.sendTXT }}
+        - name: GC_CLIENT_EMAIL
+          value: {{ .Values.transcription.gc.sendTXT }}
+        - name: GC_CLIENT_ID
+          value: {{ .Values.transcription.gc.sendTXT }}
+        - name: GC_CLIENT_CERT_URL
+          value: {{ .Values.transcription.gc.sendTXT }}
+        {{- end }}
+        - name: TZ
+          value: {{ .Values.timezone }}
+        image: jitsi/jigasi
+        name: jigasi
+        resources: {}
+      restartPolicy: Always
+status: {}
+{{- end }}
