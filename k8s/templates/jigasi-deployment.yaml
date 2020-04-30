@@ -36,7 +36,7 @@ spec:
         - name: JIGASI_SIP_PASSWORD
           value: {{ .Values.jigasi.sipPassword }}
         - name: JIGASI_SIP_SERVER
-          value: {{ .Values.jigasi.sipServer }}
+          value: {{ .Values.jigasi.sipServer | quote }}
         - name: JIGASI_SIP_PORT
           value: {{ .Values.jigasi.sipPort }}
         - name: JIGASI_SIP_TRANSPORT
