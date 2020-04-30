@@ -48,9 +48,9 @@ spec:
         - name: JIGASI_BREWERY_MUC
           value: jigasibrewery
         - name: JIGASI_PORT_MIN
-          value: {{ .Values.jicofo.portMin | quote }}
+          value: {{ .Values.jigasi.portMin | quote }}
         - name: JIGASI_PORT_MAX
-          value: {{ .Values.jicofo.portMax | quote }}
+          value: {{ .Values.jigasi.portMax | quote }}
         - name: JIGASI_HEALTH_CHECK_SIP_URI
           value: {{ .Values.jigasi.healthCheckSIPURI }}
         - name: JIGASI_HEALTH_CHECK_INTERVAL
