@@ -61,27 +61,27 @@ spec:
         - name: JIGASI_ENABLE_SDES_SRTP
           value: "1"
         {{- end }}
-        {{- if (.Values.transcription.enabled) }}
+        {{- if (.Values.jigasi.transcription.enabled) }}
         - name: ENABLE_TRANSCRIPTIONS
           value: "1"
         - name: JIGASI_TRANSCRIBER_ADVERTISE_URL
-          value: {{ .Values.transcription.advertiseURL }}
+          value: {{ .Values.jigasi.transcription.advertiseURL }}
         - name: JIGASI_TRANSCRIBER_RECORD_AUDIO
-          value: {{ .Values.transcription.recordAudio }}
+          value: {{ .Values.jigasi.transcription.recordAudio }}
         - name: JIGASI_TRANSCRIBER_SEND_TXT
-          value: {{ .Values.transcription.sendTXT }}
+          value: {{ .Values.jigasi.transcription.sendTXT }}
         - name: GC_PROJECT_ID
-          value: {{ .Values.transcription.gc.sendTXT }}
+          value: {{ .Values.jigasi.transcription.gc.projectID }}
         - name: GC_PRIVATE_KEY_ID
-          value: {{ .Values.transcription.gc.sendTXT }}
+          value: {{ .Values.jigasi.transcription.gc.privateKeyID }}
         - name: GC_PRIVATE_KEY
-          value: {{ .Values.transcription.gc.sendTXT }}
+          value: {{ .Values.jigasi.transcription.gc.privateKey }}
         - name: GC_CLIENT_EMAIL
-          value: {{ .Values.transcription.gc.sendTXT }}
+          value: {{ .Values.jigasi.transcription.gc.clientEmail }}
         - name: GC_CLIENT_ID
-          value: {{ .Values.transcription.gc.sendTXT }}
+          value: {{ .Values.jigasi.transcription.gc.clientID }}
         - name: GC_CLIENT_CERT_URL
-          value: {{ .Values.transcription.gc.sendTXT }}
+          value: {{ .Values.jigasi.transcription.gc.clientCertURL }}
         {{- end }}
         - name: TZ
           value: {{ .Values.timezone }}
