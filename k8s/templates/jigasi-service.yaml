@@ -1,0 +1,216 @@
+{{- if (.Values.jigasi.enabled) }}
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: jigasi
+  name: jigasi
+spec:
+  ports:
+  # Need more ports? Append with this command:
+  # for i in {20000..20050}; do echo "  - name: \"jigasi-$i\""; echo "    protocol: UDP"; echo "    port: $i"; echo "    targetPort: $i"; done >> jigasi-service.yaml
+  - name: "jigasi-20000"
+    protocol: UDP
+    port: 20000
+    targetPort: 20000
+  - name: "jigasi-20001"
+    protocol: UDP
+    port: 20001
+    targetPort: 20001
+  - name: "jigasi-20002"
+    protocol: UDP
+    port: 20002
+    targetPort: 20002
+  - name: "jigasi-20003"
+    protocol: UDP
+    port: 20003
+    targetPort: 20003
+  - name: "jigasi-20004"
+    protocol: UDP
+    port: 20004
+    targetPort: 20004
+  - name: "jigasi-20005"
+    protocol: UDP
+    port: 20005
+    targetPort: 20005
+  - name: "jigasi-20006"
+    protocol: UDP
+    port: 20006
+    targetPort: 20006
+  - name: "jigasi-20007"
+    protocol: UDP
+    port: 20007
+    targetPort: 20007
+  - name: "jigasi-20008"
+    protocol: UDP
+    port: 20008
+    targetPort: 20008
+  - name: "jigasi-20009"
+    protocol: UDP
+    port: 20009
+    targetPort: 20009
+  - name: "jigasi-20010"
+    protocol: UDP
+    port: 20010
+    targetPort: 20010
+  - name: "jigasi-20011"
+    protocol: UDP
+    port: 20011
+    targetPort: 20011
+  - name: "jigasi-20012"
+    protocol: UDP
+    port: 20012
+    targetPort: 20012
+  - name: "jigasi-20013"
+    protocol: UDP
+    port: 20013
+    targetPort: 20013
+  - name: "jigasi-20014"
+    protocol: UDP
+    port: 20014
+    targetPort: 20014
+  - name: "jigasi-20015"
+    protocol: UDP
+    port: 20015
+    targetPort: 20015
+  - name: "jigasi-20016"
+    protocol: UDP
+    port: 20016
+    targetPort: 20016
+  - name: "jigasi-20017"
+    protocol: UDP
+    port: 20017
+    targetPort: 20017
+  - name: "jigasi-20018"
+    protocol: UDP
+    port: 20018
+    targetPort: 20018
+  - name: "jigasi-20019"
+    protocol: UDP
+    port: 20019
+    targetPort: 20019
+  - name: "jigasi-20020"
+    protocol: UDP
+    port: 20020
+    targetPort: 20020
+  - name: "jigasi-20021"
+    protocol: UDP
+    port: 20021
+    targetPort: 20021
+  - name: "jigasi-20022"
+    protocol: UDP
+    port: 20022
+    targetPort: 20022
+  - name: "jigasi-20023"
+    protocol: UDP
+    port: 20023
+    targetPort: 20023
+  - name: "jigasi-20024"
+    protocol: UDP
+    port: 20024
+    targetPort: 20024
+  - name: "jigasi-20025"
+    protocol: UDP
+    port: 20025
+    targetPort: 20025
+  - name: "jigasi-20026"
+    protocol: UDP
+    port: 20026
+    targetPort: 20026
+  - name: "jigasi-20027"
+    protocol: UDP
+    port: 20027
+    targetPort: 20027
+  - name: "jigasi-20028"
+    protocol: UDP
+    port: 20028
+    targetPort: 20028
+  - name: "jigasi-20029"
+    protocol: UDP
+    port: 20029
+    targetPort: 20029
+  - name: "jigasi-20030"
+    protocol: UDP
+    port: 20030
+    targetPort: 20030
+  - name: "jigasi-20031"
+    protocol: UDP
+    port: 20031
+    targetPort: 20031
+  - name: "jigasi-20032"
+    protocol: UDP
+    port: 20032
+    targetPort: 20032
+  - name: "jigasi-20033"
+    protocol: UDP
+    port: 20033
+    targetPort: 20033
+  - name: "jigasi-20034"
+    protocol: UDP
+    port: 20034
+    targetPort: 20034
+  - name: "jigasi-20035"
+    protocol: UDP
+    port: 20035
+    targetPort: 20035
+  - name: "jigasi-20036"
+    protocol: UDP
+    port: 20036
+    targetPort: 20036
+  - name: "jigasi-20037"
+    protocol: UDP
+    port: 20037
+    targetPort: 20037
+  - name: "jigasi-20038"
+    protocol: UDP
+    port: 20038
+    targetPort: 20038
+  - name: "jigasi-20039"
+    protocol: UDP
+    port: 20039
+    targetPort: 20039
+  - name: "jigasi-20040"
+    protocol: UDP
+    port: 20040
+    targetPort: 20040
+  - name: "jigasi-20041"
+    protocol: UDP
+    port: 20041
+    targetPort: 20041
+  - name: "jigasi-20042"
+    protocol: UDP
+    port: 20042
+    targetPort: 20042
+  - name: "jigasi-20043"
+    protocol: UDP
+    port: 20043
+    targetPort: 20043
+  - name: "jigasi-20044"
+    protocol: UDP
+    port: 20044
+    targetPort: 20044
+  - name: "jigasi-20045"
+    protocol: UDP
+    port: 20045
+    targetPort: 20045
+  - name: "jigasi-20046"
+    protocol: UDP
+    port: 20046
+    targetPort: 20046
+  - name: "jigasi-20047"
+    protocol: UDP
+    port: 20047
+    targetPort: 20047
+  - name: "jigasi-20048"
+    protocol: UDP
+    port: 20048
+    targetPort: 20048
+  - name: "jigasi-20049"
+    protocol: UDP
+    port: 20049
+    targetPort: 20049
+  - name: "jigasi-20050"
+    protocol: UDP
+    port: 20050
+    targetPort: 20050
+{{- end }}
