@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jibri
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: jibri
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        service: jibri
+    spec:
+      containers:
+      - env:
+        - name: XMPP_AUTH_DOMAIN
+          value: auth.meet.jitsi
+        - name: XMPP_INTERNAL_MUC_DOMAIN
+          value: internal-muc.meet.jitsi
+        - name: XMPP_RECORDER_DOMAIN
+          value: {{ .Values.jibri.recorderDomain }}
+        - name: XMPP_SERVER
+          value: prosody
+        - name: XMPP_DOMAIN
+          value: meet.jitsi
+        - name: JIBRI_XMPP_USER
+          value: {{ .Values.jibri.xmppUser }}
+        - name: JIBRI_XMPP_PASSWORD
+          value: {{ .Values.jibri.xmppPassword }}
+        - name: JIBRI_BREWERY_MUC
+          value: jibribrewery
+        - name: JIBRI_RECORDER_USER
+          value: {{ .Values.jibri.recorderUser }}
+        - name: JIBRI_RECORDER_PASSWORD
+          value: {{ .Values.jibri.recorderPassword | quote }}
+        - name: JIBRI_RECORDING_DIR
+          value: {{ .Values.jibri.recordingDir }}
+        - name: JIBRI_FINALIZE_RECORDING_SCRIPT_PATH
+          value: {{ .Values.jibri.finalizeRecrodingScriptPath }}
+        - name: JIBRI_STRIP_DOMAIN_JID
+          value: {{ .Values.jibri.stripDomainJid }}
+        - name: JIBRI_LOGS_DIR
+          value: {{ .Values.jibri.logsDir }}
+        - name: DISPLAY
+          value: ":0"
+        - name: TZ
+          value: {{ .Values.timezone }}
+        image: jitsi/jibri
+        name: jibri
+        resources: {}
+      restartPolicy: Always
+status: {}

@@ -238,6 +238,55 @@ questions:
     label: "client_x509_cert_url from Google Cloud Credentials"
     type: string
 
+- variable: jibri.enableRecording
+  default: false
+  description: "If true, Jibri Recorder is enabled"
+  type: boolean
+  required: true
+  show_subquestion_if: true
+  group: "JItsi BRoadcasting Infrastructure (Jibri) configuration"
+  subquestions:
+  - variable: jibri.recorderUser
+    label: "Internal recorder user for Jibri client connections"
+    type: string
+    required: true
+  - variable: jibri.recorderPassword
+    label: "Internal recorder password for Jibri client connections"
+    type: password
+    required: true
+  - variable: jibri.recordingDir
+    label: "Directory for recordings inside Jibri container"
+    type: string
+    required: true
+  - variable: jibri.finalizeRecrodingScriptPath
+    label: "The finalizing script. Will run after recording is complete"
+    type: string
+    required: true
+  - variable: jibri.xmppUser
+    label: "Internal user for Jibri client connections."
+    type: string
+    default: "jibri"
+    required: true
+  - variable: jibri.xmppPassword
+    label: "Internal user for Jibri client connections"
+    type: password
+    required: true
+  - variable: jibri.stripDomainJid
+    label: "Prefix domain for strip inside Jibri (please see env.example for details)"
+    type: string
+    default: "muc"
+    required: true
+  - variable: jibri.pendingTimeout
+    label: "MUC connection timeout"
+    type: int
+    default: 90
+    required: true
+  - variable: jibri.logsDir
+    label: "Directory for logs inside Jibri container"
+    type: string
+    default: "/config/logs"
+    required: true
+
 - variable: letsencrypt.enabled
   default: false
   description: "If true, Letencrypt is enabled"
@@ -250,6 +299,7 @@ questions:
     label: "Letecrypt Email"
     type: string
     required: true
+
 - variable: jicofo.componentSecret
   label: "jicofo Component Secret"
   type: password

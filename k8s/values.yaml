@@ -41,6 +41,19 @@ jigasi:
       clientEmail:
       clientID:
       clientCertURL:
+
+jibri:
+  enableRecording: true
+  recorderUser: "recorder"
+  recorderPassword: "passw0rd"
+  recordingDir: "/config/recordings"
+  finalizeRecrodingScriptPath: /config/finalize.sh
+  xmppUser: "jibri"
+  xmppPassword: "passw0rd"
+  stripDomainJid: "muc"
+  pendingTimeout: 90
+  logsDir: "/config/logs"
+  
 auth: 
   enabled: true
   enableGuests: true
