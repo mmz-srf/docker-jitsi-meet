@@ -18,6 +18,14 @@ spec:
       - env:
 #        - name: ENABLE_HTTP_REDIRECT
 #          value: "1"
+        {{- if (.Values.auth.enabled) }}
+        - name: ENABLE_AUTH
+          value: "1"
+        {{- if (.Values.auth.enableGuests) }}
+        - name: ENABLE_GUESTS
+          value: "1"
+        {{- end }}
+        {{- end }}
         {{- if (.Values.letsencrypt.enabled) }}
         - name: ENABLE_LETSENCRYPT
           value: "1"
