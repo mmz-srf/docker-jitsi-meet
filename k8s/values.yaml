@@ -9,7 +9,7 @@ dockerHostAddress: ""
 
 letsencrypt:
   enabled: false
-  email: ""
+  email: "example@example.com"
 
 timezone: Europe/Zurich
 
@@ -42,8 +42,9 @@ jigasi:
       clientID:
       clientCertURL:
 
+# requires loaded snd-aloop module on Host Server. 
 jibri:
-  enableRecording: true
+  enableRecording: false
   recorderUser: "recorder"
   recorderPassword: "passw0rd"
   recordingDir: "/config/recordings"
@@ -55,7 +56,7 @@ jibri:
   logsDir: "/config/logs"
   
 auth: 
-  enabled: true
+  enabled: false
   enableGuests: true
   authtype: "internal"
   ldap:
