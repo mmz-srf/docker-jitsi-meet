@@ -9,158 +9,209 @@ spec:
     service: jigasi
   ports:
   # Need more ports? Append with this command:
-  # for i in {30100..30150}; do echo "  - name: \"jigasi-$i\""; echo "    protocol: UDP"; echo "    port: $i"; done >> jigasi-service.yaml
+  # for i in {30100..30150}; do echo "  - name: \"jigasi-$i\""; echo "    protocol: UDP"; echo "    port: $i"; echo "    nodePort: $i"; done >> jigasi-service.yaml
   - name: "jigasi-30100"
     protocol: UDP
     port: 30100
+    nodePort: 30100
   - name: "jigasi-30101"
     protocol: UDP
     port: 30101
+    nodePort: 30101
   - name: "jigasi-30102"
     protocol: UDP
     port: 30102
+    nodePort: 30102
   - name: "jigasi-30103"
     protocol: UDP
     port: 30103
+    nodePort: 30103
   - name: "jigasi-30104"
     protocol: UDP
     port: 30104
+    nodePort: 30104
   - name: "jigasi-30105"
     protocol: UDP
     port: 30105
+    nodePort: 30105
   - name: "jigasi-30106"
     protocol: UDP
     port: 30106
+    nodePort: 30106
   - name: "jigasi-30107"
     protocol: UDP
     port: 30107
+    nodePort: 30107
   - name: "jigasi-30108"
     protocol: UDP
     port: 30108
+    nodePort: 30108
   - name: "jigasi-30109"
     protocol: UDP
     port: 30109
+    nodePort: 30109
   - name: "jigasi-30110"
     protocol: UDP
     port: 30110
+    nodePort: 30110
   - name: "jigasi-30111"
     protocol: UDP
     port: 30111
+    nodePort: 30111
   - name: "jigasi-30112"
     protocol: UDP
     port: 30112
+    nodePort: 30112
   - name: "jigasi-30113"
     protocol: UDP
     port: 30113
+    nodePort: 30113
   - name: "jigasi-30114"
     protocol: UDP
     port: 30114
+    nodePort: 30114
   - name: "jigasi-30115"
     protocol: UDP
     port: 30115
+    nodePort: 30115
   - name: "jigasi-30116"
     protocol: UDP
     port: 30116
+    nodePort: 30116
   - name: "jigasi-30117"
     protocol: UDP
     port: 30117
+    nodePort: 30117
   - name: "jigasi-30118"
     protocol: UDP
     port: 30118
+    nodePort: 30118
   - name: "jigasi-30119"
     protocol: UDP
     port: 30119
+    nodePort: 30119
   - name: "jigasi-30120"
     protocol: UDP
     port: 30120
+    nodePort: 30120
   - name: "jigasi-30121"
     protocol: UDP
     port: 30121
+    nodePort: 30121
   - name: "jigasi-30122"
     protocol: UDP
     port: 30122
+    nodePort: 30122
   - name: "jigasi-30123"
     protocol: UDP
     port: 30123
+    nodePort: 30123
   - name: "jigasi-30124"
     protocol: UDP
     port: 30124
+    nodePort: 30124
   - name: "jigasi-30125"
     protocol: UDP
     port: 30125
+    nodePort: 30125
   - name: "jigasi-30126"
     protocol: UDP
     port: 30126
+    nodePort: 30126
   - name: "jigasi-30127"
     protocol: UDP
     port: 30127
+    nodePort: 30127
   - name: "jigasi-30128"
     protocol: UDP
     port: 30128
+    nodePort: 30128
   - name: "jigasi-30129"
     protocol: UDP
     port: 30129
+    nodePort: 30129
   - name: "jigasi-30130"
     protocol: UDP
     port: 30130
+    nodePort: 30130
   - name: "jigasi-30131"
     protocol: UDP
     port: 30131
+    nodePort: 30131
   - name: "jigasi-30132"
     protocol: UDP
     port: 30132
+    nodePort: 30132
   - name: "jigasi-30133"
     protocol: UDP
     port: 30133
+    nodePort: 30133
   - name: "jigasi-30134"
     protocol: UDP
     port: 30134
+    nodePort: 30134
   - name: "jigasi-30135"
     protocol: UDP
     port: 30135
+    nodePort: 30135
   - name: "jigasi-30136"
     protocol: UDP
     port: 30136
+    nodePort: 30136
   - name: "jigasi-30137"
     protocol: UDP
     port: 30137
+    nodePort: 30137
   - name: "jigasi-30138"
     protocol: UDP
     port: 30138
+    nodePort: 30138
   - name: "jigasi-30139"
     protocol: UDP
     port: 30139
+    nodePort: 30139
   - name: "jigasi-30140"
     protocol: UDP
     port: 30140
+    nodePort: 30140
   - name: "jigasi-30141"
     protocol: UDP
     port: 30141
+    nodePort: 30141
   - name: "jigasi-30142"
     protocol: UDP
     port: 30142
+    nodePort: 30142
   - name: "jigasi-30143"
     protocol: UDP
     port: 30143
+    nodePort: 30143
   - name: "jigasi-30144"
     protocol: UDP
     port: 30144
+    nodePort: 30144
   - name: "jigasi-30145"
     protocol: UDP
     port: 30145
+    nodePort: 30145
   - name: "jigasi-30146"
     protocol: UDP
     port: 30146
+    nodePort: 30146
   - name: "jigasi-30147"
     protocol: UDP
     port: 30147
+    nodePort: 30147
   - name: "jigasi-30148"
     protocol: UDP
     port: 30148
+    nodePort: 30148
   - name: "jigasi-30149"
     protocol: UDP
     port: 30149
+    nodePort: 30149
   - name: "jigasi-30150"
     protocol: UDP
     port: 30150
-{{- end }}
+    nodePort: 30150
+{{- end }}  
