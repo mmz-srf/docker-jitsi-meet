@@ -23,8 +23,8 @@ jigasi:
   sipTransport: "UDP"
   xmppUser: "jigasi"
   xmppPasword: "passwOrd"
-  portMin: 20000
-  portMax: 20050
+  portMin: 30100
+  portMax: 30150
   healthCheckSIPURI: "keepalive"
   healthCheckInterval: 300000
   SIPKeepAliveMethod: "OPTIONS"
