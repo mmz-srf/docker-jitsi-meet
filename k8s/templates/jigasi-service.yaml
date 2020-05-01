@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    service: jigasi
   name: jigasi
 spec:
+  selector:
+    service: jigasi
   ports:
   # Need more ports? Append with this command:
   # for i in {20000..20050}; do echo "  - name: \"jigasi-$i\""; echo "    protocol: UDP"; echo "    port: $i"; echo "    targetPort: $i"; done >> jigasi-service.yaml
