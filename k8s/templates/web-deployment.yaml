@@ -38,6 +38,21 @@ spec:
           value: muc.meet.jitsi
         - name: TZ
           value: {{ .Values.timezone }}
+        {{- if (.Values.jibri.enableRecording) }}
+        - name: ENABLE_RECORDING
+          value: "1"
+        - name: JIBRI_BREWERY_MUC
+          value: jibribrewery
+        - name: JIBRI_PENDING_TIMEOUT
+          value: {{ .Values.jibri.pendingTimeout | quote}}
+        - name: JIBRI_XMPP_USER
+          value: {{ .Values.jibri.xmppUser }}
+        - name: JIBRI_XMPP_PASSWORD
+          value: {{ .Values.jibri.xmppPassword }}
+        - name: JIBRI_RECORDER_USER
+          value: {{ .Values.jibri.recorderUser }}
+        - name: JIBRI_RECORDER_PASSWORD
+          value: {{ .Values.jibri.recorderPassword | quote }}
         image: jitsi/web
         name: web
         ports:
