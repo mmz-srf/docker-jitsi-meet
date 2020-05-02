@@ -61,6 +61,7 @@ spec:
           value: {{ .Values.jibri.recorderUser }}
         - name: JIBRI_RECORDER_PASSWORD
           value: {{ .Values.jibri.recorderPassword | quote }}
+        {{- end }}
         image: jitsi/web
         name: web
         ports:

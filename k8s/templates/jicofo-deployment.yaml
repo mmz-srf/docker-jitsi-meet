@@ -1,3 +1,4 @@
+{{- if (.Values.jicofo.enableRecording) }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -47,3 +48,4 @@ spec:
         resources: {}
       restartPolicy: Always
 status: {}
+{{- end }}
